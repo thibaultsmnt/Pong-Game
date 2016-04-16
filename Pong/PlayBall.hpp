@@ -10,7 +10,8 @@
 #define PlayBall_hpp
 
 #include <stdio.h>
+#include <SFML/Graphics.hpp>
 
-int playBall(int winnerOfLastBall, int scorePlayer1, int scorePlayer2);
+int playBall(sf::RenderWindow &window, int winnerOfLastBall, int scorePlayer1, int scorePlayer2);
 
 #endif /* PlayBall_hpp */

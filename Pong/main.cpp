@@ -27,11 +27,12 @@ using namespace sf;
 using namespace std;
 
 #include "ResourcePath.hpp"
-#include "ResetGame.cpp"
+#include "PlayGame.hpp"
 
 int main(int, char const**)
 {
-   
+    
+    playGame();
     
     return 0;
 }
