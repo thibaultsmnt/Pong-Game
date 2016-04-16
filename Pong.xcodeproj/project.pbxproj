@@ -18,6 +18,8 @@
 		21C51CCE1CC12BB9000163DB /* PlayGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21C51CCC1CC12BB9000163DB /* PlayGame.cpp */; };
 		21C51CD11CC12E78000163DB /* PlayBall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21C51CCF1CC12E78000163DB /* PlayBall.cpp */; };
 		21C51CD41CC12F7F000163DB /* ScoreManagement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21C51CD21CC12F7F000163DB /* ScoreManagement.cpp */; };
+		21C51CD71CC2354A000163DB /* BallOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21C51CD51CC2354A000163DB /* BallOut.cpp */; };
+		21C51CDA1CC236C2000163DB /* BallWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21C51CD81CC236C2000163DB /* BallWall.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		21C51CD01CC12E78000163DB /* PlayBall.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayBall.hpp; sourceTree = "<group>"; };
 		21C51CD21CC12F7F000163DB /* ScoreManagement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreManagement.cpp; sourceTree = "<group>"; };
 		21C51CD31CC12F7F000163DB /* ScoreManagement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ScoreManagement.hpp; sourceTree = "<group>"; };
+		21C51CD51CC2354A000163DB /* BallOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallOut.cpp; sourceTree = "<group>"; };
+		21C51CD61CC2354A000163DB /* BallOut.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BallOut.hpp; sourceTree = "<group>"; };
+		21C51CD81CC236C2000163DB /* BallWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallWall.cpp; sourceTree = "<group>"; };
+		21C51CD91CC236C2000163DB /* BallWall.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BallWall.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,10 @@
 				21C51CD01CC12E78000163DB /* PlayBall.hpp */,
 				21C51CD21CC12F7F000163DB /* ScoreManagement.cpp */,
 				21C51CD31CC12F7F000163DB /* ScoreManagement.hpp */,
+				21C51CD51CC2354A000163DB /* BallOut.cpp */,
+				21C51CD61CC2354A000163DB /* BallOut.hpp */,
+				21C51CD81CC236C2000163DB /* BallWall.cpp */,
+				21C51CD91CC236C2000163DB /* BallWall.hpp */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -201,9 +211,11 @@
 				21C51CCE1CC12BB9000163DB /* PlayGame.cpp in Sources */,
 				21C51CD11CC12E78000163DB /* PlayBall.cpp in Sources */,
 				21C51CC81CC0C788000163DB /* GameConstant.cpp in Sources */,
+				21C51CDA1CC236C2000163DB /* BallWall.cpp in Sources */,
 				21C51CD41CC12F7F000163DB /* ScoreManagement.cpp in Sources */,
 				21C51CB41CC0C3C5000163DB /* ResourcePath.mm in Sources */,
 				21C51CCB1CC129D1000163DB /* ResetGame.cpp in Sources */,
+				21C51CD71CC2354A000163DB /* BallOut.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

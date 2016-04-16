@@ -20,7 +20,7 @@ void playGame(){
     
     while(continuer){
         
-        winnerOfTheBall = playBall(winnerOfTheBall);
+        winnerOfTheBall = playBall(winnerOfTheBall, scorePlayer1, scorePlayer2);
         updateScore(winnerOfTheBall, &scorePlayer1, &scorePlayer2);
         
         int gameWinner = isGameFinish(scorePlayer1, scorePlayer2);

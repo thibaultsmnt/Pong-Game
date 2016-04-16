@@ -12,7 +12,10 @@
 #include <stdio.h>
 #define WIN_HEIGHT 720
 #define WIN_WIGTH 1280
-#define BORDER_HEIGHT 20
+#define BORDER_SIZE 20
 #define BORDER_MARGIN 20
+#define RACKET_SIZE 40
+#define RACKET_Margin 40
+#define BALL_SIZE 10
 
 #endif /* GameConstant_hpp */
