@@ -40,8 +40,43 @@ int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int
     float racket1PositionY = 0;
     float racket2PositionY = 0;
     
-
     
+    //draw
+    sf::RectangleShape racket1(sf::Vector2f(RACKET_WIDTH, RACKET_HEIGHT));
+    sf::RectangleShape racket2(sf::Vector2f(RACKET_WIDTH, RACKET_HEIGHT));
+    
+    sf::RectangleShape borderUp(sf::Vector2f(WIN_WIDTH, BORDER_SIZE));
+    borderUp.setPosition(0, BORDER_MARGIN);
+    
+    sf::RectangleShape borderDown(sf::Vector2f(WIN_WIDTH, BORDER_SIZE));
+    borderDown.setPosition(0, WIN_HEIGHT-BORDER_MARGIN-BORDER_SIZE);
+    
+    sf::RectangleShape borderMiddle(sf::Vector2f(BORDER_SIZE, WIN_HEIGHT-2*BORDER_MARGIN));
+    borderMiddle.setPosition(WIN_WIDTH/2-BORDER_SIZE/2, BORDER_MARGIN);
+    
+    
+    
+    sf::RectangleShape ball(sf::Vector2f(BALL_SIZE, BALL_SIZE));
+    
+    
+    sf::Text textScore1;
+    sf::Text textScore2;
+    
+    
+    textScore1.setFont(font);
+    textScore1.setString(to_sstring(scorePlayer1));
+    textScore1.setCharacterSize(CHARACTER_SIZE);
+    textScore1.setColor(Color::White);
+    float textScore1PositonX = WIN_WIDTH/2 -  textScore1.getLocalBounds().width - SCORE_MARGIN_MIDDLE;
+    textScore1.setPosition(textScore1PositonX, SCORE_MARGIN_TOP);
+    
+    textScore2.setFont(font);
+    textScore2.setString(to_sstring(scorePlayer2));
+    textScore2.setCharacterSize(CHARACTER_SIZE);
+    textScore2.setColor(Color::White);
+    float textScore2PositonX = WIN_WIDTH/2 + SCORE_MARGIN_MIDDLE;
+    textScore2.setPosition(textScore2PositonX, SCORE_MARGIN_TOP);
+
     
     
     
@@ -73,31 +108,49 @@ int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int
         
         //move Ball
         moveBall(&ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY, clock);
+        ball.setPosition(ballPositionX, ballPositionY);
+
         //TODO
         
         
         //if ball mur inverse x
         checkBallWall(&ballPositionY, &ballSpeedY);
         
+        //get new racket positions
+        racketPosition(&racket1PositionY, 1);
+        racketPosition(&racket2PositionY, 2);
+        
         
         
         //if ball raquette = dark magique pour determiner les nouveau vector
         checkBallRacket1(&racket1PositionY, &ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY);
         checkBallRacket2(&racket2PositionY, &ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY);
+        racket1.setPosition(RACKET_1_POSITION_X, racket1PositionY);
+        racket2.setPosition(RACKET_2_POSITION_X, racket2PositionY);
+
 
         //TODO
         
         
-        //get new racket positions
-        racketPosition(&racket1PositionY, 1);
-        racketPosition(&racket2PositionY, 2);
-        
+      
         //On dessine
         window.clear(Color::Black);
-        drawBorder(window);
-        drawRacket(window, racket1PositionY, racket2PositionY);
-        drawBall(window, ballPositionX, ballPositionY);
-        drawScore(window, font, scorePlayer1, scorePlayer2);
+        //drawBorder(window);
+        //drawRacket(window, racket1PositionY, racket2PositionY);
+       
+        window.draw(borderUp);
+        window.draw(borderDown);
+        window.draw(borderMiddle);
+        
+        window.draw(racket1);
+        window.draw(racket2);
+        
+       // drawBall(window, ballPositionX, ballPositionY);
+        window.draw(ball);
+
+       // drawScore(window, font, scorePlayer1, scorePlayer2);
+        window.draw(textScore1);
+        window.draw(textScore2);
         window.display();
                 
         
