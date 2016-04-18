@@ -11,6 +11,6 @@
 
 #include <stdio.h>
 
-void initializeBall(int lastWinner, int *ballPositionX, int *ballPositionY, int *ballSpeedX, int *ballSpeedY);
+void initializeBall(int lastWinner, float *ballPositionX, float *ballPositionY, float *ballSpeedX, float *ballSpeedY);
 
 #endif /* InitializeBall_hpp */

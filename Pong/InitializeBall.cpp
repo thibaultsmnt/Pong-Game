@@ -10,7 +10,7 @@
 #include "InitializeBall.hpp"
 #include "GameConstant.hpp"
 
-void initializeBall(int lastWinner, int *ballPositionX, int *ballPositionY, int *ballSpeedX, int *ballSpeedY){
+void initializeBall(int lastWinner, float *ballPositionX, float *ballPositionY, float *ballSpeedX, float *ballSpeedY){
     
     *ballPositionY = INITIAL_BALL_POSITION_Y;
     *ballSpeedX = INITIAL_BALL_SPEED_X;
@@ -24,6 +24,7 @@ void initializeBall(int lastWinner, int *ballPositionX, int *ballPositionY, int 
     
     if (lastWinner == 1 ) {
         *ballPositionX = WIN_WIDTH/2 - BALL_SIZE/2 - INITIAL_BALL_POSITION_X;
+        *ballSpeedX *= -1;
 
     } else if (lastWinner == 2){
         *ballPositionX = WIN_WIDTH/2 - BALL_SIZE/2 + INITIAL_BALL_POSITION_X;

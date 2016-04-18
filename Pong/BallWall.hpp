@@ -11,6 +11,6 @@
 
 #include <stdio.h>
 
-void checkBallWall(int *ballPositionY, int *ballSpeedY);
+void checkBallWall(float *ballPositionY, float *ballSpeedY);
 
 #endif /* BallWall_hpp */

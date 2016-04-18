@@ -6,6 +6,9 @@
 //  Copyright © 2016 Thibault Simonetto. All rights reserved.
 //
 
+//TODO REMOVE QUANDPLUS BESOINS
+#include <iostream>
+
 #include <SFML/Graphics.hpp>
 
 #include "PlayBall.hpp"
@@ -17,22 +20,25 @@
 #include "DrawBorder.hpp"
 #include "DrawRackets.hpp"
 #include "DrawBall.hpp"
+#include "DrawScore.hpp"
+#include "MoveBall.hpp"
+#include "BallRacket.hpp"
 
 using namespace sf;
 
-int playBall(RenderWindow &window, int winnerOfLastBall, int scorePlayer1, int scorePlayer2){
+int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int scorePlayer1, int scorePlayer2){
     
-    int positionRacket1 = 0;
-    int positionRacket2 = 0;
+    sf::Clock clock;
     
-    int ballPositionX = 0;
-    int ballPositionY = 0;
-    int ballSpeedX = 0;
-    int ballSpeedY = 0;
+    
+    float ballPositionX = 0;
+    float ballPositionY = 0;
+    float ballSpeedX = 0;
+    float ballSpeedY = 0;
     
     int potentialWinner = 0;
-    int racket1PositionY = 0;
-    int racket2PositionY = 0;
+    float racket1PositionY = 0;
+    float racket2PositionY = 0;
     
     // initialize the ball position in function of the winner Last Ball
     initializeBall(winnerOfLastBall, &ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY);
@@ -58,12 +64,21 @@ int playBall(RenderWindow &window, int winnerOfLastBall, int scorePlayer1, int s
         //if btnpress return 0 reset
         //TODO
         
+        
+        //move Ball
+        moveBall(&ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY, clock);
+        //TODO
+        
+        
         //if ball mur inverse x
         checkBallWall(&ballPositionY, &ballSpeedY);
         
         
         
         //if ball raquette = dark magique pour determiner les nouveau vector
+        checkBallRacket1(&racket1PositionY, &ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY);
+        checkBallRacket2(&racket2PositionY, &ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY);
+
         //TODO
         
         
@@ -76,15 +91,12 @@ int playBall(RenderWindow &window, int winnerOfLastBall, int scorePlayer1, int s
         drawBorder(window);
         drawRacket(window, racket1PositionY, racket2PositionY);
         drawBall(window, ballPositionX, ballPositionY);
+        drawScore(window, font, scorePlayer1, scorePlayer2);
         window.display();
-        
-        
+                
         
     }
     
-    
-    
     return 1;
-    
     
 }

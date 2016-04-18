@@ -21,12 +21,20 @@ void playGame(){
     int scorePlayer2 = 0;
     int continuer = 1;
     int winnerOfTheBall = 0;
+    window.setFramerateLimit(60);
+    sf::Font font;
+    
+    if (!font.loadFromFile("police_pong.ttf")){
+        printf("Error while loading police\n");
+        return;
+    }
+    
     
     while(continuer && window.isOpen()){
         
-    
         
-       winnerOfTheBall = playBall(window,  winnerOfTheBall, scorePlayer1, scorePlayer2);
+        
+       winnerOfTheBall = playBall(window, font, winnerOfTheBall, scorePlayer1, scorePlayer2);
         updateScore(winnerOfTheBall, &scorePlayer1, &scorePlayer2);
         
         int gameWinner = isGameFinish(scorePlayer1, scorePlayer2);

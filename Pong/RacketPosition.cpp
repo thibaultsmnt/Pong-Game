@@ -9,9 +9,9 @@
 #include "RacketPosition.hpp"
 #include "GameConstant.hpp"
 
-void racketPosition(int *racketPositionY, int racketNumber){
+void racketPosition(float *racketPositionY, int racketNumber){
     
-    int pourcentagePosition =  75; //demander a la fonction potentiomettre
+    int pourcentagePosition =  63; //demander a la fonction potentiomettre
     
     *racketPositionY = RACKET_MIN_POSITION_Y + (( RACKET_MAX_POSITION_Y - RACKET_MIN_POSITION_Y)*pourcentagePosition/100);
     

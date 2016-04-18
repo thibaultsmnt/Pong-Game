@@ -11,6 +11,6 @@
 
 #include <stdio.h>
 
-void racketPosition(int *racketPositionY, int racketNumber);
+void racketPosition(float *racketPositionY, int racketNumber);
 
 #endif /* RacketPosition_hpp */

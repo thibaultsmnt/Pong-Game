@@ -10,6 +10,7 @@
 #define GameConstant_hpp
 
 #include <stdio.h>
+#include <SFML/Graphics.hpp>
 
 //WINDOWS
 #define WIN_HEIGHT 720
@@ -32,11 +33,18 @@
 
 //BALL
 #define BALL_SIZE 30
-#define INITIAL_BALL_POSITION_Y (WIN_HEIGHT/2)
+#define INITIAL_BALL_POSITION_Y (WIN_HEIGHT/2) - BALL_SIZE/2
 #define INITIAL_BALL_POSITION_X 100 //Position centre ball par rapport au centre du fillet)
 
-#define INITIAL_BALL_SPEED_X 10
-#define INITIAL_BALL_SPEED_Y 10
+#define INITIAL_BALL_SPEED_X 200 //pt /sec
+#define INITIAL_BALL_SPEED_Y 0 //pt /sec
+#define MAX_ANGLE 1.04719755
+#define BALL_SPEED_UNITY 900
+
+//SCORE DISPLAY
+#define CHARACTER_SIZE 150
+#define SCORE_MARGIN_TOP 30
+#define SCORE_MARGIN_MIDDLE 50
 
 
 #endif /* GameConstant_hpp */

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21B504931CC3DBDC00E96EDF /* MoveBall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21B504911CC3DBDC00E96EDF /* MoveBall.cpp */; };
+		21B504961CC3F13100E96EDF /* BallRacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21B504941CC3F13100E96EDF /* BallRacket.cpp */; };
+		21B5049A1CC4290D00E96EDF /* DrawScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21B504981CC4290D00E96EDF /* DrawScore.cpp */; };
 		21C51CB41CC0C3C5000163DB /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21C51CB31CC0C3C5000163DB /* ResourcePath.mm */; };
 		21C51CB71CC0C3C5000163DB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21C51CB61CC0C3C5000163DB /* main.cpp */; };
 		21C51CBA1CC0C3C5000163DB /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21C51CB91CC0C3C5000163DB /* cute_image.jpg */; };
@@ -28,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21B504911CC3DBDC00E96EDF /* MoveBall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MoveBall.cpp; sourceTree = "<group>"; };
+		21B504921CC3DBDC00E96EDF /* MoveBall.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MoveBall.hpp; sourceTree = "<group>"; };
+		21B504941CC3F13100E96EDF /* BallRacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallRacket.cpp; sourceTree = "<group>"; };
+		21B504951CC3F13100E96EDF /* BallRacket.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BallRacket.hpp; sourceTree = "<group>"; };
+		21B504971CC4242C00E96EDF /* police_pong.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = police_pong.TTF; sourceTree = "<group>"; };
+		21B504981CC4290D00E96EDF /* DrawScore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawScore.cpp; sourceTree = "<group>"; };
+		21B504991CC4290D00E96EDF /* DrawScore.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawScore.hpp; sourceTree = "<group>"; };
 		21C51CAE1CC0C3C5000163DB /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C51CB21CC0C3C5000163DB /* Pong-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pong-Info.plist"; sourceTree = "<group>"; };
 		21C51CB31CC0C3C5000163DB /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -122,6 +132,12 @@
 				21C51CE51CC266E7000163DB /* DrawBall.hpp */,
 				21C51CE71CC26A05000163DB /* InitializeBall.cpp */,
 				21C51CE81CC26A05000163DB /* InitializeBall.hpp */,
+				21B504911CC3DBDC00E96EDF /* MoveBall.cpp */,
+				21B504921CC3DBDC00E96EDF /* MoveBall.hpp */,
+				21B504941CC3F13100E96EDF /* BallRacket.cpp */,
+				21B504951CC3F13100E96EDF /* BallRacket.hpp */,
+				21B504981CC4290D00E96EDF /* DrawScore.cpp */,
+				21B504991CC4290D00E96EDF /* DrawScore.hpp */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -137,6 +153,7 @@
 		21C51CB81CC0C3C5000163DB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				21B504971CC4242C00E96EDF /* police_pong.TTF */,
 				21C51CB91CC0C3C5000163DB /* cute_image.jpg */,
 				21C51CBB1CC0C3C5000163DB /* nice_music.ogg */,
 				21C51CBD1CC0C3C5000163DB /* sansation.ttf */,
@@ -236,11 +253,14 @@
 				21C51CCE1CC12BB9000163DB /* PlayGame.cpp in Sources */,
 				21C51CD11CC12E78000163DB /* PlayBall.cpp in Sources */,
 				21C51CC81CC0C788000163DB /* GameConstant.cpp in Sources */,
+				21B504961CC3F13100E96EDF /* BallRacket.cpp in Sources */,
+				21B504931CC3DBDC00E96EDF /* MoveBall.cpp in Sources */,
 				21C51CE61CC266E7000163DB /* DrawBall.cpp in Sources */,
 				21C51CDA1CC236C2000163DB /* BallWall.cpp in Sources */,
 				21C51CE01CC2620E000163DB /* DrawBorder.cpp in Sources */,
 				21C51CD41CC12F7F000163DB /* ScoreManagement.cpp in Sources */,
 				21C51CE31CC264DA000163DB /* DrawRackets.cpp in Sources */,
+				21B5049A1CC4290D00E96EDF /* DrawScore.cpp in Sources */,
 				21C51CB41CC0C3C5000163DB /* ResourcePath.mm in Sources */,
 				21C51CE91CC26A05000163DB /* InitializeBall.cpp in Sources */,
 				21C51CCB1CC129D1000163DB /* ResetGame.cpp in Sources */,
@@ -383,6 +403,7 @@
 				21C51CC51CC0C3C5000163DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
