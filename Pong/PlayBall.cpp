@@ -40,6 +40,12 @@ int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int
     float racket1PositionY = 0;
     float racket2PositionY = 0;
     
+
+    
+    
+    
+    
+    
     // initialize the ball position in function of the winner Last Ball
     initializeBall(winnerOfLastBall, &ballPositionX, &ballPositionY, &ballSpeedX, &ballSpeedY);
     
