@@ -12,7 +12,6 @@
 void moveBall(float *ballPositionX, float *ballPositionY, float *ballSpeedX, float *ballSpeedY, sf::Clock &clock){
     
     float sec = clock.restart().asSeconds();
-    printf("%f\n", sec);
     *ballPositionX = (*ballPositionX + *ballSpeedX*sec);
     *ballPositionY = (*ballPositionY + *ballSpeedY*sec);
     
