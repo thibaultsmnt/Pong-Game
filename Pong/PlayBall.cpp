@@ -20,11 +20,12 @@
 #include "DrawScore.hpp"
 #include "MoveBall.hpp"
 #include "BallRacket.hpp"
+#include "ResetGame.hpp"
 
 using namespace sf;
 
 
-int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int scorePlayer1, int scorePlayer2, int &I2CFile){
+int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int &scorePlayer1, int &scorePlayer2, int &I2CFile){
     
     sf::Clock clock;
     
@@ -101,7 +102,10 @@ int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int
         }
         
         //if btnpress return 0 reset
-        //TODO
+        if (checkResetInput()){
+        	resetScore(&scorePlayer1, &scorePlayer2);
+        	return 0;
+        }
         
         
         //move Ball

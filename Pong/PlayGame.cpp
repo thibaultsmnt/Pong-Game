@@ -17,6 +17,7 @@
 #include <linux/i2c-dev.h> // I2C bus definitions
 #include <unistd.h>
 #include "PlayerInput.hpp"
+#include <wiringPi.h>
 
 void playGame(){
     
@@ -27,6 +28,14 @@ void playGame(){
     
     I2CFile = open("/dev/i2c-1", O_RDWR);     // Open the I2C device
     ioctl(I2CFile, I2C_SLAVE, ADS_ADDRESS);   // Specify the address of the I2C Slave to communicate with
+
+
+    if (wiringPiSetup()==-1){
+    	printf("GPIO Reset button Error\n");
+    	return ;
+    }
+    pullUpDnControl(RESET_PIN, PUD_UP);
+    pinMode(RESET_PIN, INPUT);
 
 
     int scorePlayer1 = 0;
@@ -53,7 +62,8 @@ void playGame(){
         
         int gameWinner = isGameFinish(scorePlayer1, scorePlayer2);
         if(gameWinner){
-            continuer = 0;
+        	scorePlayer1=0;
+        	scorePlayer2=0;
         }
         
     }

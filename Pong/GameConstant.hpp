@@ -46,5 +46,7 @@
 #define SCORE_MARGIN_TOP 30
 #define SCORE_MARGIN_MIDDLE 50
 
+#define RESET_PIN 4 //16 physic
+
 
 #endif /* GameConstant_hpp */

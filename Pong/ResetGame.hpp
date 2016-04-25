@@ -13,5 +13,6 @@
 
 void resetScore(int *scorePlayer1, int *scorePlayer2);
 int isGameFinish(int scorePlayer1, int scorePlayer2);
+int checkResetInput();
 
 #endif /* ResetGame_hpp */

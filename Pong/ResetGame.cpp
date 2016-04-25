@@ -7,6 +7,8 @@
 //
 
 #include "ResetGame.hpp"
+#include "GameConstant.hpp"
+#include <wiringPi.h>
 
 void resetScore(int *scorePlayer1, int *scorePlayer2){
     *scorePlayer1 = 0;
@@ -21,4 +23,17 @@ int isGameFinish(int scorePlayer1, int scorePlayer2){
         return 2;
     }
     return 0;
+}
+
+int checkResetInput(){
+	int button = digitalRead(RESET_PIN);
+	if (button == 0) {
+		while(button == 0){
+			button = digitalRead(RESET_PIN);
+		}
+		return 1;
+
+
+	}
+	return 0;
 }
