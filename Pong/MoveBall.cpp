@@ -14,6 +14,6 @@ void moveBall(float *ballPositionX, float *ballPositionY, float *ballSpeedX, flo
     float sec = clock.restart().asSeconds();
     *ballPositionX = (*ballPositionX + *ballSpeedX*sec);
     *ballPositionY = (*ballPositionY + *ballSpeedY*sec);
-    
+    //printf("%f\n",  sec);    
     
 }

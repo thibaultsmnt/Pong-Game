@@ -17,16 +17,14 @@
 #include "BallWall.hpp"
 #include "GameConstant.hpp"
 #include "RacketPosition.hpp"
-#include "DrawBorder.hpp"
-#include "DrawRackets.hpp"
-#include "DrawBall.hpp"
 #include "DrawScore.hpp"
 #include "MoveBall.hpp"
 #include "BallRacket.hpp"
 
 using namespace sf;
 
-int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int scorePlayer1, int scorePlayer2){
+
+int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int scorePlayer1, int scorePlayer2, int &I2CFile){
     
     sf::Clock clock;
     
@@ -117,8 +115,8 @@ int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int
         checkBallWall(&ballPositionY, &ballSpeedY);
         
         //get new racket positions
-        racketPosition(&racket1PositionY, 1);
-        racketPosition(&racket2PositionY, 2);
+        racketPosition(&racket1PositionY, 1, I2CFile);
+        racketPosition(&racket2PositionY, 2, I2CFile);
         
         
         
@@ -132,11 +130,8 @@ int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int
         //TODO
         
         
-      
         //On dessine
         window.clear(Color::Black);
-        //drawBorder(window);
-        //drawRacket(window, racket1PositionY, racket2PositionY);
        
         window.draw(borderUp);
         window.draw(borderDown);
@@ -145,10 +140,8 @@ int playBall(sf::RenderWindow &window, sf::Font &font, int winnerOfLastBall, int
         window.draw(racket1);
         window.draw(racket2);
         
-       // drawBall(window, ballPositionX, ballPositionY);
         window.draw(ball);
 
-       // drawScore(window, font, scorePlayer1, scorePlayer2);
         window.draw(textScore1);
         window.draw(textScore2);
         window.display();

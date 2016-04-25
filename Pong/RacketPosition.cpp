@@ -8,10 +8,11 @@
 
 #include "RacketPosition.hpp"
 #include "GameConstant.hpp"
+#include "PlayerInput.hpp"
 
-void racketPosition(float *racketPositionY, int racketNumber){
+void racketPosition(float *racketPositionY, int racketNumber, int &I2CFile){
     
-    int pourcentagePosition =  63; //demander a la fonction potentiomettre
+    float pourcentagePosition =  getPlayerInput(racketNumber-1, &I2CFile); //demander a la fonction potentiomettre
     
     *racketPositionY = RACKET_MIN_POSITION_Y + (( RACKET_MAX_POSITION_Y - RACKET_MIN_POSITION_Y)*pourcentagePosition/100);
     

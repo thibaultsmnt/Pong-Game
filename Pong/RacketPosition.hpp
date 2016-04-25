@@ -11,6 +11,6 @@
 
 #include <stdio.h>
 
-void racketPosition(float *racketPositionY, int racketNumber);
+void racketPosition(float *racketPositionY, int racketNumber, int &I2CFile);
 
 #endif /* RacketPosition_hpp */
