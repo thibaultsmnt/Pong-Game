@@ -6,7 +6,9 @@
 #include "DrawScore.hpp"
 #include "GameConstant.hpp"
 #include "ResetGame.hpp"
+#include <SFML/Graphics.hpp>
 
+using namespace sf;
 
 void gameFinished(sf::RenderWindow &window, sf::Font &font,int winner){
 
@@ -14,7 +16,7 @@ void gameFinished(sf::RenderWindow &window, sf::Font &font,int winner){
     sf::Text textReset;
 
     //Set text textWinner
-    textWinner.setString("Player " + to_sstring(scorePlayer1)+ " win!");
+    textWinner.setString("Player " + to_sstring(winner)+ " win!");
     //Set Properties textWinner
     textWinner.setFont(font);
     textWinner.setCharacterSize(CHARACTER_SIZE);

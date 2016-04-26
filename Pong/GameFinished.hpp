@@ -8,6 +8,7 @@
 
 #ifndef GameFinished_hpp
 #define GameFinished_hpp
+#include <SFML/Graphics.hpp>
 
 void gameFinished(sf::RenderWindow &window, sf::Font &font,int winner);
 
