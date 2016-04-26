@@ -53,7 +53,7 @@ void playGame(){
     }
     
     
-    while(continuer && window.isOpen()){
+    while(window.isOpen()){
         
         
         
