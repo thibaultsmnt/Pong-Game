@@ -16,24 +16,24 @@ void gameFinished(sf::RenderWindow &window, sf::Font &font,int winner){
     sf::Text textReset;
 
     //Set text textWinner
-    textWinner.setString("Player " + to_sstring(winner)+ " win!");
+    textWinner.setString("PLAYER " + to_sstring(winner)+ " WIN!");
     //Set Properties textWinner
     textWinner.setFont(font);
     textWinner.setCharacterSize(CHARACTER_SIZE);
     textWinner.setColor(Color::White);
     //Set Position textWinner
-    float textWinnerPositonX = WIN_WIDTH/2 -  textWinner.getLocalBounds().width;
+    float textWinnerPositonX = WIN_WIDTH/2 -  textWinner.getLocalBounds().width/2;
     float textWinnerPositonY = WIN_HEIGHT/2 - textWinner.getLocalBounds().height - SCORE_MARGIN_MIDDLE;
     textWinner.setPosition(textWinnerPositonX, textWinnerPositonY);
 
     //Set text textReset
-    textReset.setString("Press the button to restart a game");
+    textReset.setString("PRESS THE BUTTON TO RESTART THE GAME");
     //Set Properties textReset
     textReset.setFont(font);
-    textReset.setCharacterSize(CHARACTER_SIZE);
+    textReset.setCharacterSize(50);
     textReset.setColor(Color::White);
     //Set Position textReset
-    float textResetPositonX = WIN_WIDTH/2 -  textWinner.getLocalBounds().width;
+    float textResetPositonX = WIN_WIDTH/2 -  textReset.getLocalBounds().width/2;
     float textResetPositonY = WIN_HEIGHT/2  + SCORE_MARGIN_MIDDLE;
     textReset.setPosition(textResetPositonX, textResetPositonY);
 
