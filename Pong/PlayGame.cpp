@@ -18,6 +18,7 @@
 #include <unistd.h>
 #include "PlayerInput.hpp"
 #include <wiringPi.h>
+#include "GameFinished.hpp"
 
 void playGame(){
     
@@ -57,13 +58,14 @@ void playGame(){
         
         
         
-       winnerOfTheBall = playBall(window, font, winnerOfTheBall, scorePlayer1, scorePlayer2, I2CFile);
+        winnerOfTheBall = playBall(window, font, winnerOfTheBall, scorePlayer1, scorePlayer2, I2CFile);
         updateScore(winnerOfTheBall, &scorePlayer1, &scorePlayer2);
         
         int gameWinner = isGameFinish(scorePlayer1, scorePlayer2);
         if(gameWinner){
-        	scorePlayer1=0;
-        	scorePlayer2=0;
+            resetScore(&scorePlayer1, &scorePlayer2);
+            gameFinished(window, font, gameWinner);
+
         }
         
     }
